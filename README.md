@@ -27,3 +27,100 @@ Implementing cost optimization strategies to manage resources efficiently
 Integrating authentication and identity management systems to ensure secure user access
 Monitoring and analyzing costs while maintaining high performance and scalability
 Throughout the workshop, participants will work collaboratively in teams, simulating a real-world development environment. By the end of the workshop, participants will have gained practical experience in building a cloud-native backend for a photo social network, incorporating various technologies and best practices in the cloud-native ecosystem.
+
+
+
+Photo Social Network API
+========================
+
+This API documentation provides details on the endpoints available for interacting with the Photo Social Network backend. The API allows users to upload, manage, and interact with photos in the social network.
+
+
+Authentication
+--------------
+
+Authentication is required for certain API endpoints. Please refer to the API documentation for specific authentication requirements.
+
+Endpoints
+---------
+
+### Upload a Photo
+
+-   Endpoint: `POST /api/photos`
+-   Description: Upload a photo to the Photo Social Network.
+-   Request Body: multipart/form-data
+    -   Form field: `image` - The JPG image file to be uploaded.
+-   Response:
+    -   HTTP 200 OK if the photo is successfully uploaded.
+    -   Response Body: JSON object containing the generated image ID.
+
+### List Photos
+
+-   Endpoint: `GET /api/photos`
+-   Description: Retrieve a list of photos from the Photo Social Network.
+-   Response:
+    -   HTTP 200 OK.
+    -   Response Body: JSON array of photo objects representing the user's photos.
+
+### Get Photo Details
+
+-   Endpoint: `GET /api/photos/{photoId}`
+-   Description: Retrieve details of a specific photo.
+-   Path Parameter:
+    -   `photoId` - The ID of the photo to retrieve.
+-   Response:
+    -   HTTP 200 OK if the photo exists.
+    -   Response Body: JSON object containing the photo details.
+
+### Comment on a Photo
+
+-   Endpoint: `POST /api/photos/{photoId}/comments`
+-   Description: Add a comment to a photo.
+-   Path Parameter:
+    -   `photoId` - The ID of the photo to comment on.
+-   Request Body: JSON object
+    -   Example: `{ "comment": "Great photo!" }`
+-   Response:
+    -   HTTP 200 OK if the comment is successfully added.
+    -   Response Body: JSON object containing the updated photo details.
+
+### Like a Photo
+
+-   Endpoint: `POST /api/photos/{photoId}/like`
+-   Description: Like a photo.
+-   Path Parameter:
+    -   `photoId` - The ID of the photo to like.
+-   Response:
+    -   HTTP 200 OK if the like is successfully added.
+    -   Response Body: JSON object containing the updated photo details.
+
+### Mark a Photo as Private
+
+-   Endpoint: `PATCH /api/photos/{photoId}`
+-   Description: Mark a photo as private.
+-   Path Parameter:
+    -   `photoId` - The ID of the photo to update.
+-   Request Body: JSON object
+    -   Example: `{ "isPrivate": true }`
+-   Response:
+    -   HTTP 200 OK if the photo is successfully updated.
+    -   Response Body: JSON object containing the updated photo details.
+
+### Follow/Unfollow an User
+
+-   Endpoint: `POST /api/users/{userId}/follow`
+    -   To follow a user.
+-   Endpoint: `POST /api/users/{userId}/unfollow`
+    -   To unfollow a user.
+-   Path Parameter:
+    -   `userId` - The ID of the user to follow/unfollow.
+-   Response:
+    -   HTTP 200 OK if the operation is successful.
+    -   Response Body: JSON object confirming the follow/unfollow action.
+
+### Delete a Photo
+
+-   Endpoint: `DELETE /api/photos/{photoId}`
+-   Description: Delete a photo from the Photo Social Network.
+-   Path Parameter:
+    -   `photoId` - The ID of the photo to delete.
