@@ -11,23 +11,7 @@ Introduction to Cloud Native Backend Development and Photo Upload with Thumbnail
 Overview of cloud-native backend architectures and design principles
 Understanding the requirements and challenges of building a photo social network backend
 Introduction to the topics covered in subsequent sessions
-Hands-on Challenge: Participants will be guided to implement the functionality to upload photos to the photo social network service. Additionally, they will learn how to generate thumbnails for efficient display and user experience.
-
-
-### Session 2:  Compute, Networking, and Networking@Edge
-
-Leveraging containerization / serverless and orchestration technologies for efficient deployment and scalability
-Designing and implementing networking components to enable seamless communication between users and the backend
-Exploring networking@edge concepts to optimize content delivery and improve user experience
-
-
-### Session 3: Costs and Authentication
-
-Implementing cost optimization strategies to manage resources efficiently
-Integrating authentication and identity management systems to ensure secure user access
-Monitoring and analyzing costs while maintaining high performance and scalability
-Throughout the workshop, participants will work collaboratively in teams, simulating a real-world development environment. By the end of the workshop, participants will have gained practical experience in building a cloud-native backend for a photo social network, incorporating various technologies and best practices in the cloud-native ecosystem.
-
+Hands-on Challenge: Participants will implement the functionality to upload photos. Additionally, they will learn how to generate thumbnails for efficient display and user experience.
 
 
 Photo Social Network API
