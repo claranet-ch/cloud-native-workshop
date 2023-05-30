@@ -14,6 +14,10 @@ Introduction to the topics covered in subsequent sessions
 Hands-on Challenge: Participants will implement the functionality to upload photos. Additionally, they will learn how to generate thumbnails for efficient display and user experience.
 
 
+### Following sessions
+After each sessions, new topics and goals will be published here.
+
+
 Photo Social Network API
 ========================
 
