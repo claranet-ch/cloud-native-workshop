@@ -29,16 +29,21 @@ This API documentation provides details on the endpoints available for interacti
 Authentication
 --------------
 
-Authentication is required for certain API endpoints. To keep simple the authentication token you can g
+Authentication is required for certain API endpoints. To keep simple the authentication you can use a simple authentication header like the following ones:
 
+Authentication: userId1
 
-Authentication: user_id_1
+Authentication: userId2
 
-Authentication: user_id_2
+Authentication: userId3
 
-Authentication: user_id_3
+Authentication: JohnDoe
 
+Authentication: PeteCocoon
 
+Authentication: EliahSmallearl
+
+For example if you upload a photo with POST /api/photos and you set the authentication header as "Authentication: user_id_1" the photo will be assigned to user_id_1.
 
 
 Sessions and endpoints
@@ -59,10 +64,10 @@ Sessions and endpoints
 ## Session 2: June 22nd
 ### List Photos
 
--   Endpoint: `GET /api/photos?userId=userId`
+-   Endpoint: `GET /api/photos?userId=userId1`
 -   Description: Retrieve a list of photos from the Photo Social Network ordered by upload date
 -   Query String Parameter: 
-    - Optional: If a userId is specified the photos are filtered by the owner
+    - Optional: If a userId parameter is set, all the photos of the specified user are returned. Otherwise all the photos you can access will be listed.
 -   Response:
     -   HTTP 200 OK.
     -   Response Body: JSON array of photo objects representing the user's photos.
@@ -71,8 +76,11 @@ Sessions and endpoints
         [
            { "id": "f1disy1", "url": "https://the-url-of-f1disy1.jpg", ... },
            { "id": "sd2jknr", "url": "https://the-url-of-sd2jknr.jpg", ... }
-        ]
-        
+        ]1
+ - Note: after session 4 the behaviour of this api will change: 
+    - If you call the endpoint without specifying a user ID, the photo wall will be shown. The photowall consists of all your photos (public and private) with public photos of users you follow, sorted by upload date.
+    - If you call the endpoint with an user ID, all the PUBLIC user photos of the user will be listed. 
+    - If you call the endpoint with the user id that matches the user id of the authentication token, you are listing all of your photos (public or private)
 
 ### Get Photo Details
 
@@ -88,6 +96,17 @@ Sessions and endpoints
         { 
             "id": "f1disy1", 
             "url": "https://the-url-of-f1disy1.jpg",
+            ... 
+        }
+ - Note: after session 3 the behaviour of this api will change: 
+     - the response body contains the list of comments, the number of likes, the list of user that like the photo
+     -   Example:
+        { 
+            "id": "f1disy1", 
+            "url": "https://the-url-of-f1disy1.jpg",
+            "comments": [{"id": "comment_id_123", "content": "this is a comment to your foto",  "userId": "user1", ... }, {"id": "comment_id_123", "content": "this is a comment to your foto",  ... }],
+            "likeCount": 123,
+            "likes": ["user1", "user2", "user3"]
             ... 
         }
 
