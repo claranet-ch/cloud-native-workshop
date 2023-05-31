@@ -24,10 +24,12 @@ Photo Social Network API
 This API documentation provides details on the endpoints available for interacting with the Photo Social Network backend. The API allows users to upload, manage, and interact with photos in the social network.
 
 
+
+
 Authentication
 --------------
 
-Authentication is required for certain API endpoints. To keep simple the authentication token you can g=
+Authentication is required for certain API endpoints. To keep simple the authentication token you can g
 
 
 Authentication: user_id_1
@@ -39,9 +41,9 @@ Authentication: user_id_3
 
 
 
-Endpoints
+Sessions and endpoints
 ---------
-## Session 1
+## Session 1: Starting June 1st
 ### Upload a Photo
 
 -   Endpoint: `POST /api/photos`
@@ -54,7 +56,7 @@ Endpoints
     -   Example:
        { "id": "f1disy1" }
 
-## Session 2
+## Session 2: June 22nd
 ### List Photos
 
 -   Endpoint: `GET /api/photos?userId=userId`
@@ -89,7 +91,7 @@ Endpoints
             ... 
         }
 
-## Session 3        
+## Session 3: July 6th        
 ### Comment on a Photo
 
 -   Endpoint: `POST /api/photos/{photoId}/comments`
@@ -116,7 +118,7 @@ Endpoints
     -   Response Body: 
         {'photoId': 'photoo-id-123'}
 
-## Session 4
+## Session 4: July 20th
 ### Mark a Photo as Private/Public
 
 -   Endpoint: `PATCH /api/photos/{photoId}`
@@ -152,4 +154,5 @@ If you follow an user, when you list the photos with the /api/photos endpoint, y
     -   HTTP 200 OK if the operation is successful.
     -   Response Body: JSON object confirming the follow/unfollow action.
 
-
+## Session 5: Aug 3rd
+Final review and feedback.
