@@ -41,6 +41,8 @@ Endpoints
 -   Response:
     -   HTTP 200 OK if the photo is successfully uploaded.
     -   Response Body: JSON object containing the generated image ID.
+    -   Example:
+       { "id": "f1disy1" }
 
 ### List Photos
 
@@ -49,17 +51,30 @@ Endpoints
 -   Response:
     -   HTTP 200 OK.
     -   Response Body: JSON array of photo objects representing the user's photos.
+    -   Example:
+        [
+           { "id": "f1disy1", "url": "https://the url of f1disy1.jpg" },
+           { "id": "sd2jknr", "url": "https://the url of sd2jknr.jpg" }
+        ]
+        
 
 ### Get Photo Details
 
 -   Endpoint: `GET /api/photos/{photoId}`
 -   Description: Retrieve details of a specific photo.
+-   NOTE: 
 -   Path Parameter:
     -   `photoId` - The ID of the photo to retrieve.
 -   Response:
     -   HTTP 200 OK if the photo exists.
     -   Response Body: JSON object containing the photo details.
-
+    -   Example:
+        { 
+            "id": "f1disy1", 
+            "url": "https://the url of f1disy1.jpg",
+            "likes_count": 241           
+        }
+        
 ### Comment on a Photo
 
 -   Endpoint: `POST /api/photos/{photoId}/comments`
@@ -67,7 +82,12 @@ Endpoints
 -   Path Parameter:
     -   `photoId` - The ID of the photo to comment on.
 -   Request Body: JSON object
-    -   Example: `{ "comment": "Great photo!" }`
+    -   Example: `[
+                {"id": "fs24nj", "content": "this is a commento to your foto", "userId": "df234n", "userName": "John" },
+                {"id": "wsdrvv", "content": "another cool comment", "userId": "u734bn", "userName": "Ringo" },
+                {"id": "42vgwa", "content": "another cool comment", "userId": "dasdd", "userName": "Paul" },
+                {"id": "324fhi", "content": "another cool comment", "userId": "uasdn", "userName": "George" }
+            ]`
 -   Response:
     -   HTTP 200 OK if the comment is successfully added.
     -   Response Body: JSON object containing the updated photo details.
