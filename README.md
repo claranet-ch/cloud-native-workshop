@@ -93,17 +93,15 @@ Sessions and endpoints
     -   HTTP 200 OK if the photo exists.
     -   Response Body: JSON object containing the photo details.
     -   Example:
-        { 
-            "id": "f1disy1", 
-            "url": "https://the-url-of-f1disy1.jpg",
-            ... 
-        }
+        { "id": "f1disy1", "url": "https://the-url-of-f1disy1.jpg", "size": {"small": "https://the-url-of-f1disy1-SMALL.jpg", "medium": "https://the-url-of-f1disy1-MEDIUM.jpg" }... }
+        
  - Note: after session 3 the behaviour of this api will change: 
      - the response body contains the list of comments, the number of likes, the list of user that like the photo
      -   Example:
         { 
             "id": "f1disy1", 
             "url": "https://the-url-of-f1disy1.jpg",
+             "size": {"small": "https://the-url-of-f1disy1-SMALL.jpg", "medium": "https://the-url-of-f1disy1-MEDIUM.jpg" },
             "comments": [{"id": "comment_id_123", "content": "this is a comment to your foto",  "userId": "user1", ... }, {"id": "comment_id_123", "content": "this is a comment to your foto",  ... }],
             "likeCount": 123,
             "likes": ["user1", "user2", "user3"]
